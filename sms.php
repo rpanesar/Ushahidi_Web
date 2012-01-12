@@ -171,7 +171,7 @@ class sms_Core
 		
 		// Add clickable report back feature.
 		// Change delimiter to whatever is needed for sending the text aka #
-		$delimiter = "/";
+		$delimiter = "#";
 	  $token = strtok($message, $delimiter);
 		$i = 0;
 		while ($token !== false){
