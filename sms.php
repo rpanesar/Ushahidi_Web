@@ -210,7 +210,7 @@ class sms_Core
   			  $message = "Format for #report is: #report/# where the # is the incident id or #report/#location/keyword where location is the city and keyword used in the search.";
 			    // Edit the parameters in sms::send to work with main deployment
 				  //sms::send($to, $from, $message);
-				  sms::send($from, $from, $message);
+				  sms::send($to, $from, $message);
 				  
 				}
       }
@@ -227,7 +227,7 @@ class sms_Core
        $new = $str[1];
        $result = mysql_query("SELECT `incident`.`id`, `incident`.`incident_description` FROM `incident` WHERE `incident`.`id` = $str[1]");
        $message = mysql_fetch_row($result);
-       sms::send($from, $from, $message[1]);
+       sms::send($to, $from, $message[1]);
                         
        mysql_free_result($result);
        mysql_close($db);
